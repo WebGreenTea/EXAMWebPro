@@ -22,8 +22,13 @@ $product = mysqli_query($conect, $sql);
                 <div class="d-flex justify-content-center">
                     <h1>รายการสินค้าทั้งหมด</h1>
                 </div>
-                <div class="mt-3">
-                    <a href="addproduct.php" class="btn btn-success mb-5">+ เพิ่มสินค้าใหม่</a>
+                <div class="row mt-3">
+                    <div class="col-md-10">
+                    </div>
+                    <div class="col-md-2">
+                        <a href="addproduct.php" class="btn btn-success mb-3">+ เพิ่มสินค้าใหม่</a>
+                    </div>
+
                 </div>
                 <div class="row  border-bottom">
                     <div class="col-md-1 d-flex justify-content-center ">

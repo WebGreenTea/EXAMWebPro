@@ -16,39 +16,55 @@ $type = mysqli_query($conect, $sql);
 
 <body>
     <div class="container mt-5">
-    <a href="menu.php" class="btn btn-primary">< กลับหน้าหลัก</a>
-        <div class="d-flex justify-content-center">
-            <h1>รายการประเภทสินค้าทั้งหมด</h1>
-        </div>
-        <div class="mt-3">
-            <a href="addtype.php" class="btn btn-success mb-5">+ เพิ่มประเภทสินค้าใหม่</a>
-        </div>
-        
-        <div class="row mb-3">
-            <div class="col-md-3 d-flex justify-content-center">
-                ID
-            </div>
-            <div class="col-md-3 d-flex justify-content-center">
-                ชื่อประเภท
-            </div>
-            
-        </div>
-        <?php while ($row = mysqli_fetch_array($type)) { ?>
-            <div class="row mb-3">
-                <div class="col-md-3 d-flex justify-content-center">
-                    <?php echo $row['typeID']; ?>
+        <a href="menu.php" class="btn btn-primary">
+            < กลับหน้าหลัก</a>
+                <div class="d-flex justify-content-center">
+                    <h1>รายการประเภทสินค้าทั้งหมด</h1>
                 </div>
-                <div class="col-md-3 d-flex justify-content-center">
-                    <?php echo $row['typeName']; ?>
+
+                <div class="row mt-3 mb-3">
+                    <div class="col-md-9">
+                    </div>
+                    <div class="col-md-2">
+                        <a href="addtype.php" class="btn btn-success">+ เพิ่มประเภทสินค้าใหม่</a>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <a href="edittype.php?id=<?php echo $row['typeID'] ?>" class="btn btn-info d-flex justify-content-center">แก้ไข</a>
+                <div class="row ">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-2 d-flex justify-content-center border-bottom">
+                        <h5>ID</h5>
+                    </div>
+                    <div class="col-md-2 d-flex justify-content-center border-bottom">
+                        <h5>ชื่อประเภท</h5>
+                    </div>
+                    <div class="col-md-2 border-bottom">
+                    </div>
+                    <div class="col-md-2 border-bottom">
+                    </div>
+
+
                 </div>
-                <div class="col-md-3">
-                    <a href="deltype.php?id=<?php echo $row['typeID'] ?>" class="btn btn-danger d-flex justify-content-center">ลบ</a>
-                </div>
-            </div>
-        <?php } ?>
+                <?php while ($row = mysqli_fetch_array($type)) { ?>
+                    <div class="row  ">
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center border-bottom align-items-center p-2">
+                            <?php echo $row['typeID']; ?>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center border-bottom align-items-center p-2">
+                            <?php echo $row['typeName']; ?>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center border-bottom align-items-center p-2">
+                            <a href="edittype.php?id=<?php echo $row['typeID'] ?>" class="btn btn-info ">แก้ไข</a>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-start border-bottom align-items-center p-2">
+                            <a href="deltype.php?id=<?php echo $row['typeID'] ?>" class="btn btn-danger ">ลบ</a>
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                    </div>
+                <?php } ?>
 
     </div>
 
