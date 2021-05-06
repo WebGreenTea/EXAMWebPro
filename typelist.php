@@ -3,6 +3,12 @@ include('conectDB.php');
 $sql = "SELECT * FROM producttype";
 $type = mysqli_query($conect, $sql);
 ?>
+
+<?php 
+if(isset($_GET['delError'])){
+    echo '<script language="javascript">alert("! ไม่สามารถลบได้ เนื่องจากมีสินค้าที่่ใช้ข้อมูลประเภทนี้อยู่")</script>';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
