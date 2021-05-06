@@ -79,7 +79,7 @@ $product = mysqli_query($conect, $sql);
                         <div class="col-md-1 d-flex justify-content-center align-items-center p-2">
                             <a href="editproduct.php?id=<?php echo $row['productID'] ?>" class="btn btn-info ">แก้ไข</a>
                         </div>
-                        <div class="col-md-1 align-items-center p-2">
+                        <div class="col-md-1 d-flex align-items-center p-2">
                             <a href="delProduct.php?id=<?php echo $row['productID'] ?>" class="btn btn-danger ">ลบ</a>
                         </div>
                     </div>
