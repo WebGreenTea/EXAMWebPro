@@ -38,15 +38,18 @@ $product = mysqli_query($conect, $sql);
                         <h6>ชื่อสินค้า</h6>
                     </div>
                     <div class="col-md-2 d-flex justify-content-center">
+                        <h6>รูป</h6>
+                    </div>
+                    <div class="col-md-2 d-flex justify-content-center">
                         <h6>ประเภทสินค้า</h6>
                     </div>
                     <div class="col-md-1 d-flex justify-content-center">
                         <h6>จำนวนสินค้า</h6>
                     </div>
-                    <div class="col-md-2 d-flex justify-content-center">
+                    <div class="col-md-1 d-flex justify-content-center">
                         <h6>ราคาต้นทุน</h6>
                     </div>
-                    <div class="col-md-2 d-flex justify-content-center">
+                    <div class="col-md-1 d-flex justify-content-center">
                         <h6>ราคาขาย</h6>
                     </div>
                 </div>
@@ -57,6 +60,13 @@ $product = mysqli_query($conect, $sql);
                         </div>
                         <div class="col-md-2 d-flex justify-content-center align-items-center p-2">
                             <?php echo $row['productName']; ?>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center align-items-center p-2">
+                            <?php if(isset($row['img'])):?>
+                                <img src="pictures/<?php echo $row['img'] ?>" style="width: 70%">
+                            <?php else:?>
+                                <h1>-</h1>
+                            <?php endif?>
                         </div>
                         <div class="col-md-2 d-flex justify-content-center align-items-center p-2">
                             <?php
@@ -70,10 +80,10 @@ $product = mysqli_query($conect, $sql);
                         <div class="col-md-1 d-flex justify-content-center align-items-center p-2">
                             <?php echo $row['quantity']; ?>
                         </div>
-                        <div class="col-md-2 d-flex justify-content-center align-items-center p-2">
+                        <div class="col-md-1 d-flex justify-content-center align-items-center p-2">
                             <?php echo number_format($row['cost']); ?>
                         </div>
-                        <div class="col-md-2 d-flex justify-content-center align-items-center p-2">
+                        <div class="col-md-1 d-flex justify-content-center align-items-center p-2">
                             <?php echo number_format($row['sell']); ?>
                         </div>
                         <div class="col-md-1 d-flex justify-content-center align-items-center p-2">

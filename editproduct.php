@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
             <h1>แก้ไขข้อมูลสินค้า</h1>
         </div>
 
-        <form action="updatePD.php" method="post">
+        <form  action="updatePD.php" method="post" enctype="multipart/form-data">
             <label for="pdname" style="font-size: 25px;">ชื่อสินค้า</label>
             <input type="text" id="pdname" name="pdname" class="form-control" required value="<?php echo $product['productName'] ?>">
             <label for="type" style="font-size: 25px;">ประเภทสินค้า</label>
@@ -52,6 +52,8 @@ if (isset($_GET['id'])) {
             <input type="number" id="sell" name="sell" class="form-control" required value="<?php echo $product['sell'] ?>">
             <label for="count" style="font-size: 25px;">จำนวนสินค้า</label>
             <input type="number" id="count" name="count" class="form-control" required value="<?php echo $product['quantity'] ?>">
+            <label for="File" style="font-size: 25px;">อัพโหลดรูป</label>
+            <input type="file" class="form-control" id="File" name="ImageFile"/>
 
             <div class="row mt-3">
                 <div class="col-md-6 d-flex justify-content-center">

@@ -19,7 +19,7 @@ include('conectDB.php');
             <h1>เพิ่มสินค้าใหม่</h1>
         </div>
 
-        <form action="saveProduct.php" method="post">
+        <form action="saveProduct.php" method="post" enctype="multipart/form-data">
             <label for="pdname" style="font-size: 25px;">ชื่อสินค้า</label>
             <input type="text" id="pdname" name="pdname" class="form-control" required>
             <label for="type" style="font-size: 25px;">ประเภทสินค้า</label>
@@ -38,6 +38,8 @@ include('conectDB.php');
             <input type="number" id="sell" name="sell" class="form-control" required>
             <label for="count" style="font-size: 25px;">จำนวนสินค้า</label>
             <input type="number" id="count" name="count" class="form-control" required>
+            <label for="File" style="font-size: 25px;">อัพโหลดรูป</label>
+            <input type="file" class="form-control" id="File" name="ImageFile"/>
             <!--<input type="hidden" name="max_size" value="5000000">
             <label for="sell" style="font-size: 25px;">อัพโหลดไฟล์ภาพ</label>
             <input type="file" name="ImageFile" size="30" class="mt-3">
